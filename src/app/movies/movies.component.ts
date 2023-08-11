@@ -13,6 +13,8 @@ export class MoviesComponent {
 
   moviesList : Movie[] = [];
   movieResult ?: Movieresult;
+  length : number = 0;
+  imageUrl = "";
 
   constructor(private movieService : MoviesService){
     console.log(this.moviesList);
@@ -25,8 +27,14 @@ export class MoviesComponent {
   loadMovies() : void{
     this.movieService.getAllMovies().subscribe(movies => {
       this.moviesList = movies.results;
-      console.log(typeof(movies));
-      console.log(this.moviesList);
+
+      this.moviesList.forEach(element => {
+        element.poster_path = "https://image.tmdb.org/t/p/original".concat(element.poster_path);
+        console.log(element.poster_path)
+      });
+      this.length = this.moviesList.length;
+      console.log(this.moviesList.slice(0,5));
+      console.log(this.moviesList.slice(5,10));
     });
   }
 }

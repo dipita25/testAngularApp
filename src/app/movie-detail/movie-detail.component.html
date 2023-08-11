@@ -1,8 +1,36 @@
-<h2>Details</h2>
-<h3>Titre Original : {{movie.original_title}}</h3>
-<h3>Date de Sortie : {{movie.release_date}}</h3>
+
+
+<div class="row m-2">
+    
+    <div class="col-4 mx-auto">
+        <div>
+            <img src={{movie.poster_path}} class="card-img-top" alt="..." style="height: 35rem; width: 30rem;">
+        </div>
+        
+    </div>
+
+    <div class="col-4 mx-auto">
+        <div class="card text-center">
+            <div class="card-body" style="height: 35rem; width: 30rem;">
+            <h5 class="card-title">{{movie.title}}</h5>
+            <p class="card-text">Date de Sortie : <strong>{{movie.release_date}}</strong> </p>
+            <p class="card-text">Langue Originale : <strong> {{movie.original_language}}</strong></p>
+            <p class="card-text">Titre Original : <strong>{{movie.original_title}}</strong> </p>
+            <p class="card-text">Nombre de Votes : <strong>{{movie.vote_count}}</strong> </p>
+            <p class="card-text">{{movie.overview}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row m-2">
+    <div class="col-4 mx-auto">
+        <div class="text-center">
+            <button class="btn btn-primary" (click) ="goBack()" style="width: 10rem;">back</button>
+        </div>
+    </div>
+</div>
 
 
 
-<button (click) ="goBack()">back</button>
 

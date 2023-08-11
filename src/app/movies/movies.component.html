@@ -1,7 +1,58 @@
-<h2>List of Movies form the website <strong>themoviedb.org</strong></h2>
-<ul>
-    <li *ngFor = "let movie of moviesList">
-        <h3>{{movie.title}} => <a routerLink="movie-detail/{{movie.id}}">details</a></h3>
-        
-    </li>
-</ul>
+<div class="container text-center">
+
+    <h2>List of Movies from the website <a href="https://www.themoviedb.org/" target="_blank"><strong>themoviedb.org</strong></a></h2>
+    <br>
+    <div class="row m-2 mt-3 justify-content-around">
+        <div class="col-2 mx-auto" *ngFor = "let movie of moviesList.slice(0,5); let index = index">
+            <div class="card text-center" style="height: 35rem; width: 15rem;">
+                <img src={{movie.poster_path}} class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">Nombre de Votes : {{movie.vote_count}}</p>
+                <a routerLink="movie-detail/{{movie.id}}" class="btn btn-primary">details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-2 mx-auto" *ngFor = "let movie of moviesList.slice(5,10); let index = index">
+            <div class="card text-center" style="height: 35rem; width: 15rem;">
+                <img src={{movie.poster_path}} class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">Nombre de Votes : {{movie.vote_count}}</p>
+                <a routerLink="movie-detail/{{movie.id}}" class="btn btn-primary">details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-2 mx-auto" *ngFor = "let movie of moviesList.slice(10,15); let index = index">
+            <div class="card text-center" style="height: 35rem; width: 15rem;">
+                <img src={{movie.poster_path}} class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">Nombre de Votes : {{movie.vote_count}}</p>
+                <a routerLink="movie-detail/{{movie.id}}" class="btn btn-primary">details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <div class="col-2 mx-auto" *ngFor = "let movie of moviesList.slice(15,20); let index = index">
+            <div class="card text-center" style="height: 35rem; width: 15rem;">
+                <img src={{movie.poster_path}} class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">Nombre de Votes : {{movie.vote_count}}</p>
+                <a routerLink="movie-detail/{{movie.id}}" class="btn btn-primary">details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -30,6 +30,7 @@ export class MovieDetailComponent {
     console.log(this.id);
     this.movieService.getMovieById(id).subscribe(movie =>{
       this.movie = movie;
+      this.movie.poster_path = "https://image.tmdb.org/t/p/original".concat(this.movie.poster_path);
       console.log(movie);
     });
   }
